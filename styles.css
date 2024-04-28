@@ -7,7 +7,7 @@ License: none (public domain)
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, kbd, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -35,14 +35,6 @@ body {
 ol, ul {
     list-style: none;
 }
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -60,6 +52,10 @@ table {
     --lightgray: #EAEAEA;
     --white: #FFFFFF;
     --black: #000000;
+    --select-border: var(--purple);
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+    --form-control-color: rebeccapurple;
 }
 
 /* -- skip links -- */
@@ -76,16 +72,12 @@ table {
 	width: auto;
 	height: auto;
 }
-/*-- HEADER --*/
-header {
-    background: linear-gradient(180deg, rgba(85,188,213,1) 0%, rgba(255,255,255,1) 57%);
+/*-- Local Styles --*/
+body {
+    background: linear-gradient(180deg, rgba(85,188,213,1) 0%, rgba(255,255,255,1) 5%);
 
 }
 
-h1 {
-    font-family: var(--fonts-header);
-    font-size: 45px;
-}
 p {
     font-family: var(--fonts);
     font-size: 25px;
@@ -97,23 +89,160 @@ h2 {
 
 h3 {
     font-family: var(--fonts-header);
-    font-size: 35px;
+    font-size: 4em;
 }
+
+/* Heading Header */
+#logo {
+    margin-top: 5em;
+}
+h1 {
+    font-family: var(--fonts-header);
+    font-size: 60px;
+    margin-top: .75em;
+    margin-left: .5em;
+}
+
+/* INTRO */
+
+#intro h2 {
+    padding-top: .75em;
+    margin-left: 1em;
+}
+
+#intro p {
+    margin-left: 1.5em;
+    width: 85%;
+    margin-bottom: 1em;
+    line-height: 2;
+}
+
+#intro img {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
 
 /* PLAN */
 #plan {
     background-color: var(--yellow);
 }
 
+#plan h3 {
+    padding-top: .75em;
+    margin-left: 1em;
+}
+
+#plan h4 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--fonts);
+    text-transform: uppercase;
+    display: absolute;
+}
+
+#plan img {
+    display: block;
+    margin: 0 auto;
+    padding: 5.5em;
+    border: .25em solid var(--white);
+    border-radius: 2%;
+    background-color: var(--teal);
+}
+
+
+/* Testimonials */
+
+ #testimonials h3 {
+  margin-top: 1em;
+  margin-left: 1em;
+ }
+
+ #testimonials h4{
+    font-family: var(--fonts);
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+ }
+
+ #testimonials img {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    width: 40%;
+ }
+
+ #testimonials p {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 5px;
+ }
+
+ q {
+    font-family: var(--fonts);
+    font-size: 25px;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    padding-bottom: 1.5em;
+ }
+
 /* ABOUT */
 #about {
     background-color: var(--blue);
 }
 
+#about h3 {
+    padding-top: 40px;
+    padding-top: 30px;
+    margin-bottom: 25px;
+    margin-left: 1em;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+}
+#about img {
+    display: block;
+    margin: 0 auto;
+}
+
+#about h4 {
+    font-family: var(--fonts);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+#about p {
+    font-family: var(--fonts);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#about img{
+    padding-bottom: 30px;
+}
+
+
+
 /* -- CONTACT -- */
+#contact h3 {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .form-required {
     font-family: var(--fonts);
-    font-size: 20px;
+    font-size: .5em;
     font-style: italic;
     text-align: center;
 }
@@ -127,12 +256,67 @@ form{
     font-size: 1.5em;
     font-family: var(--fonts);
     font-weight: 525;
+    text-transform: uppercase;
 }
 
 input, label, fieldset {
     display: block;
     width: 80%;
     margin: 0 auto;
+}
+
+.radio-input {
+    font-family: var(--purple);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: .5em;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: .15em solid currentColor;
+    border-radius: 50%;
+    transform: translate(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: .65em;
+    height: .65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="radio"]:focus {
+    outline: max(2px, .15em) solid currentColor;
+    outline-offset: max(2px, .15em);
+}
+
+.form-control:focus-within {
+    color: var(--form-control-color)
+}
+
+.radio-input + .radio-input {
+    margin-top: 1em;
 }
 
 .required {
@@ -143,7 +327,7 @@ input, label, fieldset {
 }
 
 label {
-   margin: 0.25em 1.5em;
+   margin: .25em 1.5em;
    padding-top: 25px;
 }
 
@@ -156,7 +340,7 @@ input {
 }
 
 fieldset {
-   margin: 1em 1.5em;
+   margin: .25em 1.5em;
 }
 
 input[type=submit]{
@@ -168,13 +352,61 @@ input[type=submit]{
     font-weight: bold;
     margin: 0 auto;
     margin-top: 30px;
+    text-transform: uppercase;
 }
 
-textarea {
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
     width: 100%;
-    height: 5em;
-    margin-bottom: 1em;
+    font-family: var(--fonts);
+    font-size: 1em;
+    color: var(--darkgray);
+    font-weight: bold;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
 }
+
+select::ms-expand {
+    display: none;
+}
+
+.custom-select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 50ch;
+    height: 60px;
+    margin-left: 3em;
+    border: .20em solid var(--select-border);
+    padding: .25em .5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+}
+
+.custom-select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+}
+
+select, .custom-select:after {
+    grid-area: select;
+}
+
 
 /*-- FOOTER --*/
 footer {
