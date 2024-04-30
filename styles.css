@@ -92,36 +92,74 @@ h3 {
     font-size: 4em;
 }
 
+
+
 /* Heading Header */
 #logo {
-    margin-top: 5em;
+    
 }
+
 h1 {
     font-family: var(--fonts-header);
     font-size: 60px;
     margin-top: .75em;
     margin-left: .5em;
+    padding-bottom: 10px;
 }
 
-/* INTRO */
-
-#intro h2 {
-    padding-top: .75em;
-    margin-left: 1em;
+header p{
+ margin-left: 1em;
+ font-size: 2em;
+ width: 85%;
+ line-height: 1.5;
 }
 
-#intro p {
-    margin-left: 1.5em;
-    width: 85%;
-    margin-bottom: 1em;
-    line-height: 2;
+
+/* MENU */
+#menu-toggle {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
 }
 
-#intro img {
-    width: 100%;
-    padding-bottom: 30px;
+#menu-toggle a {
+    text-decoration: none;
+    color: var(--darkgray);
+    text-transform: uppercase;
+    font-family: var(--fonts);
+    font-
+    -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
+#menu-toggle a:hover{
+    color: var(--yellow);
+}
+
+#menu-toggle input{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menu-toggle label{
+    
+}
 
 /* PLAN */
 #plan {
