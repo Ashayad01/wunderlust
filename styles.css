@@ -114,69 +114,13 @@ header p{
  line-height: 1.5;
 }
 
+#img-grid {
+
+}
+
 
 /* MENU */
-#menu-toggle {
-    display: block;
-    position: relative;
-    top: 50px;
-    left: 50px;
-    z-index: 1;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-        user-select: none;
-}
 
-#menu-toggle a {
-    text-decoration: none;
-    color: var(--darkgray);
-    text-transform: uppercase;
-    font-family: var(--fonts);
-    -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-
-#menu-toggle a:hover{
-    color: var(--yellow);
-}
-
-#menu-toggle input{
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
-    padding: 0;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-    -webkit-touch-callout: none;
-}
-
-#menu-toggle label{
-    position: relative;
-    display: block;
-    width: 30px;
-    height: 30px;
-}
-
-#menu-toggle label span {
-    display: none;
-}
-
-#menu-toggle input {
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
-    padding: 0;
-    z-index: 2;
-}
 
 /* PLAN */
 #plan {
